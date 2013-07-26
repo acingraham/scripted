@@ -1,0 +1,258 @@
+<!doctype html>
+<html>
+<head>
+<title> ROCK,PAPER,SCISSORS</title>
+<style type="text/css">
+div{ border-style:solid;
+ border-width:10px;
+width:100px;
+height:100px;
+
+
+ 
+
+}
+#dad{ 
+border-style:solid;
+border-width:20px;
+width:450px;
+height:450px;
+border-color:white;
+margin: 0 auto;
+
+}
+.sons{
+width:100px;
+height:100px;
+}
+#first{float:right;
+}
+
+.imgbutton{ 
+width:100px;
+height:100px;
+}
+
+
+
+</style>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+
+<script type="text/javascript">
+	//$(document).ready(function(){
+	
+		function generator()
+		{	
+		var options = ["rock", "paper", "scissors"];
+		var choice = Math.floor((Math.random()*3));
+		return 	options[choice];
+		
+		}
+		
+		// Create a function here that will take the cpu's choice, and make the appropriate image
+		// show up in the cpu's box in the browser.  The function will take 1 argument (the cpu's choice).
+		// You should call this function right after setting cpu equal to generator() in your comparison
+		// function.
+		function cpuimage(cpu)
+		{
+	
+		// var cpuimagefile = document.getElementById("first");
+		//  cpuimagefile.getElementsByTagName("img")[0].src = "billscissors.jpg";
+			
+			//	debugger;
+			
+			if (cpu === "paper"){
+			
+			var cpuimagefile = document.getElementById("first");
+		    cpuimagefile.getElementsByTagName("img")[0].src = "billpaper.jpg";
+			}
+			if (cpu === "rock"){
+			
+			var cpuimagefile = document.getElementById("first");
+		    cpuimagefile.getElementsByTagName("img")[0].src = "billrock.jpg";
+			}
+		    if (cpu === "scissors"){
+			
+			var cpuimagefile = document.getElementById("first");
+		    cpuimagefile.getElementsByTagName("img")[0].src = "billscissors.jpg";
+			
+			
+			}
+			
+		
+		}
+		
+		   
+		
+  		function comparison(user)
+		{
+			var cpu= generator();
+			// TODO - This is where you should call your function that sets the cpu's image
+			cpuimage(cpu);
+		
+			// This is when the user enters "rock"
+			if (user === "rock"){
+					if(cpu === "paper"){
+					 alert("YOU chose Rock. CPU chose Paper. Paper eats Rock. CPU wins !!!");		
+					}								
+					else if (cpu==="rock"){
+						alert("Both the CPU and YOU chose Rock it's a tie!!! ");
+						}
+					else alert("CPU chose Scissors and YOU chose Rock. YOU have just pummeled a computer. YOU WIN!!!");
+			}
+			
+			// This is when the user enters "paper"
+			 if(user === "paper"){
+					if(cpu==="rock"){
+					alert("YOU chose Paper and the CPU chose Rock. Way to wrap up the game . YOU WIN!!! ");
+					}
+					else if (cpu ==="paper" ){
+					alert("Both the CPU and YOU chose Paper. It's a TIE.!!!");
+					}
+					else alert("YOU have just been sliced and diced by the CPU. CPU WINS!!! CPU=SCISSORS vs. YOU=PAPER");
+			}
+			
+			// This is when the user enters "scissor"
+			if (user ==="scissors"){
+				if(cpu === "paper"){
+					alert("Way to cut the competition. YOU WIN!!! CPU=PAPER vs. YOU=SCISSORS");
+				}
+				else if(cpu === "scissors"){
+					alert("Looks like YOU nor the CPU had the better edge. IT'S A TIE ");
+				}
+				else  alert("Everyone knows YOU don't take a Scissor to a Rock fight.CPU WINS!!! CPU=SCISSOR vs. YOU=ROCK");
+			}
+			else  cpuimagefile = document.getElementById("first");
+		    cpuimagefile.getElementsByTagName("img")[0].src = "cpurobot.jpg";
+			
+		}
+
+		//comparison("paper");
+		
+	    //alert (cpuimage());
+		//alert(generator());
+		//cpuimage("scissor");
+//	});
+</script>
+
+
+
+</head>
+<body>
+TIME TO PLAY THE INTRICATE GAME OF ROCK PAPER SCISSORS
+<div id="dad">
+<div id="first" class="right">
+
+<img src="cpurobot.jpg" alt="cpu" width="100px" height="100px">
+			    </div>
+<div id="second" class="left" onclick="comparison('scissors')">
+<input			 class="imgbutton" type="image" src="billscissors.jpg" alt="billscissors" />
+	    </div>
+<div id="third" class="left" onclick="comparison('paper')">
+<input          class="imgbutton" type="image" src="billpaper.jpg" alt="billpaper"/>
+		</div>
+<div id="fourth"class="left" onclick="comparison('rock')">
+ <input        class="imgbutton" type="image" src="billrock.jpg" alt="billrock" />
+
+	    </div>
+	
+</div>
+
+<!--<script type="text/javascript">
+	$(document).ready(function(){
+	
+		function generator()
+		{	
+		var options = ["rock", "paper", "scissors"];
+		var choice = Math.floor((Math.random()*3));
+		return 	options[choice];
+		
+		}
+		
+		// Create a function here that will take the cpu's choice, and make the appropriate image
+		// show up in the cpu's box in the browser.  The function will take 1 argument (the cpu's choice).
+		// You should call this function right after setting cpu equal to generator() in your comparison
+		// function.
+		function cpuimage(cpu)
+		{
+	
+		// var cpuimagefile = document.getElementById("first");
+		//  cpuimagefile.getElementsByTagName("img")[0].src = "billscissors.jpg";
+			
+			//	debugger;
+			
+			if (cpu === "paper"){
+			
+			var cpuimagefile = document.getElementById("first");
+		    cpuimagefile.getElementsByTagName("img")[0].src = "billpaper.jpg";
+			}
+			if (cpu === "rock"){
+			
+			var cpuimagefile = document.getElementById("first");
+		    cpuimagefile.getElementsByTagName("img")[0].src = "billrock.jpg";
+			}
+		    if (cpu === "scissors"){
+			
+			var cpuimagefile = document.getElementById("first");
+		    cpuimagefile.getElementsByTagName("img")[0].src = "billscissors.jpg";
+			
+			
+			}
+		
+		}
+		
+		
+		
+  		function comparison(user)
+		{
+			var cpu= generator();
+			// TODO - This is where you should call your function that sets the cpu's image
+			cpuimage(cpu);
+			alert(cpu);
+			// This is when the user enters "rock"
+			if (user === "rock"){
+					if(cpu === "paper"){
+					 alert("CPU wins");		
+					}								
+					else if (cpu==="rock"){
+						alert("It's a Tie!!!!!!!!!!!!!!!!!!!!!");
+						}
+					else alert("User wins");
+			}
+			
+			// This is when the user enters "paper"
+			 if(user === "paper"){
+					if(cpu==="rock"){
+					alert("USER wins");
+					}
+					else if (cpu ==="paper" ){
+					alert("Its a tie");
+					}
+					else alert("CPU wins")
+			}
+			
+			// This is when the user enters "scissor"
+			if (user ==="scissor"){
+				if(cpu === "paper"){
+					alert("User wins");
+				}
+				else if(cpu === "scissor"){
+					alert("its a tie");
+				}
+				else  alert("CPU WINS!!!");
+			}
+		}
+
+		comparison("paper");
+		
+	    //alert (cpuimage());
+		//alert(generator());
+		//cpuimage("scissor");
+	});
+</script>
+-->
+</body>
+ 
+
+
+</html>
